@@ -12,6 +12,7 @@ class BaseSpider(RedisCrawlSpider):
     def use_splash(self, request, response):
         logger.debug('adding splash meta')
         request.meta.update(
+            dont_redirect=True,
             splash={
                 'endpoint': 'render.json',
                 'magic_response': True,

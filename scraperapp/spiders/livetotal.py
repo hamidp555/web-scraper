@@ -22,12 +22,7 @@ class LiveTotalSpider(BaseSpider):
              process_request='use_splash',
              follow=True),
     )
-
-    def use_splash(self, request, response):
-        request = super().use_splash(request, response)
-        request.meta.update(dont_redirect=True)
-        return request
-
+    
     def parse_item(self, response):
         loader = ItemLoader(item=ScraperItem(), response=response)
 
