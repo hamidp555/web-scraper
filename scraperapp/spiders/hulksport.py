@@ -28,6 +28,11 @@ class HulkSportSpider(BaseSpider):
              follow=True),
     )
 
+    def use_splash(self, request, response):
+        request = super().use_splash(request, response)
+        request.meta.update(dont_redirect=True)
+        return request
+
     def parse_item(self, response):
         logger.debug("parsing {} to extract item".format(response.url))
         loader = ItemLoader(item=ScraperItem(), response=response)

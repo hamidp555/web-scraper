@@ -34,6 +34,11 @@ class CrichdSpider(BaseSpider):
              follow=True),
     )
 
+    def use_splash(self, request, response):
+        request = super().use_splash(request, response)
+        request.meta.update(dont_redirect=True)
+        return request
+
     def _extract_urls(self, html):
         soup = BeautifulSoup(html, 'lxml')
         urls = []
