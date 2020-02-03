@@ -1,0 +1,1 @@
+from .latencies import Latencies

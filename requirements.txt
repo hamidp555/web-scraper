@@ -1,0 +1,17 @@
+scrapy==1.7.4
+scrapyd==1.2.1
+scrapyd-client==1.1.0
+scrapy-splash==0.7.2
+scrapy-redis==0.6.8
+
+requests==2.22.0
+treq==18.6.0
+beautifulsoup4==4.8.1
+
+pep8==1.7.1
+pyflakes==2.1.1
+pylint==2.4.4
+ruamel.yaml==0.16.6
+redis==3.3.11
+
+#selenium==3.141.0

@@ -1,0 +1,73 @@
+project_name: scraperapp
+project_version: 1.0.0
+
+schedule_crawl_endpoint: http://scrd-web-scraperd:6800/schedule.json
+reids_host: redis-master.default.svc.cluster.local
+redis_port: 6379
+redis_password: redispassword
+
+spiders:
+  - name: hulksport
+    setting: 
+      - name: DOWNLOAD_DELAY
+        value: 2
+    start_urls:
+      - https://www.hulkstream.com/livesport/football/
+      - https://www.hulkstream.com/livesport/tennis/
+      - https://www.hulkstream.com/livesport/basketball/
+      - https://www.hulkstream.com/livesport/ice-hockey/
+      - https://www.hulkstream.com/livesport/boxing/
+
+  - name: streamsports
+    start_urls:
+      - https://www.streamsports.to/sports/football
+      - https://www.streamsports.to/sports/baseball
+      - https://www.streamsports.to/sports/handball
+      - https://www.streamsports.to/sports/basketball
+      - https://www.streamsports.to/sports/volleyball
+      - https://www.streamsports.to/sports/ice-hockey
+      - https://www.streamsports.to/sports/cricket
+      - https://www.streamsports.to/sports/tennis
+      - https://www.streamsports.to/sports/billiard
+
+  - name: livetotal
+    start_urls:
+      - https://www.livetotal.net/cat/football/
+      - https://www.livetotal.net/cat/american-football/
+      - https://www.livetotal.net/cat/basketball/
+      - https://www.livetotal.net/cat/ice-hockey/
+      - https://www.livetotal.net/cat/combat-sport/
+      - https://www.livetotal.net/cat/racing/
+      - https://www.livetotal.net/cat/rugby/
+      - https://www.livetotal.net/cat/tennis/
+      - https://www.livetotal.net/cat/baseball/
+      - https://www.livetotal.net/cat/boxing/
+      - https://www.livetotal.net/cat/volleyball/
+
+  - name: crichd
+    start_urls:
+      - https://www.crichd.com/live-football-streaming-2019
+      - https://www.crichd.com/live-cricket-streaming-hd-2020
+      - https://www.crichd.com/rugby-live-stream
+      - https://www.crichd.com/watch-tennis-live-streaming
+      - https://www.crichd.com/boxing-live-streaming
+      - https://www.crichd.com/american-football-live-streaming
+      - https://www.crichd.com/basketball-live-streaming
+      - https://www.crichd.com/baseball-live-streaming
+      - https://www.crichd.com/hockey-live-stream
+      - https://www.crichd.com/snooker-live-streaming
+      - https://www.crichd.com/golf-live-streaming
+
+  - name: idimsports
+    start_urls:
+      - http://idimsports.eu/american-football.html
+      - http://idimsports.eu/football.html
+      - http://idimsports.eu/basketball.html
+      - http://idimsports.eu/boxing-wwe-ufc.html
+      - http://idimsports.eu/rugby.html
+      - http://idimsports.eu/ice-hockey.html
+      - http://idimsports.eu/tennis.html
+      - http://idimsports.eu/motosport.html
+      - http://idimsports.eu/golf.html
+
+
